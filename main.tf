@@ -64,6 +64,7 @@ module "api" {
   region     = "${var.region}"
   account_id = "${var.account_id}"
   stage_name = "${terraform.env}"
+  path_part = ""
 }
 
 ####################
