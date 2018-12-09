@@ -58,16 +58,15 @@ resource "aws_security_group" "all" {
 module "api" {
   name       = "${module.lambda.name}"
   source     = "./modules/api"
-  method     = "ANY"
+  method     = "POST"
   lambda     = "${module.lambda.name}"
   lambda_arn = "${module.lambda.arn}"
   region     = "${var.region}"
   account_id = "${var.account_id}"
   stage_name = "${terraform.env}"
-  path_part = ""
 }
 
-####################
+###################s#
 # Lambda
 ####################
 module "lambda" {

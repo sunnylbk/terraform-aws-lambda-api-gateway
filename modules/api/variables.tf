@@ -26,7 +26,3 @@ variable "region" {
 variable "account_id" {
   description = "The AWS account ID"
 }
-
-variable "path_part" {
-  description = "The last path segment of the API resource."
-}
