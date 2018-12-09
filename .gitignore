@@ -11,3 +11,6 @@ terraform.tfstate.backup
 *.tfvars
 
 # End of https://www.gitignore.io/api/terraform
+
+.idea/
+*.iml

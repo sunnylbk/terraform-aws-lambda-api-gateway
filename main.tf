@@ -78,12 +78,11 @@ module "lambda" {
   handler       = "${var.lambda_handler}"
   runtime       = "${var.lambda_runtime}"
   role          = "${aws_iam_role.lambda_role.arn}"
-  database_uri  = "<UPDATE_ME>"
-
-  # database_uri  = "${module.rds_instance.url}"
 
   subnet_ids         = ["${module.vpc_subnets.nat_subnet_id}"]
   security_group_ids = ["${aws_security_group.all.id}"]
+
+  env_variables = "${var.lambda_env_variables}"
 }
 
 resource "aws_s3_bucket" "lambda_repo" {

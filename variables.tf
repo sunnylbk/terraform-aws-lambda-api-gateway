@@ -68,6 +68,11 @@ variable "lambda_handler" {
   description = "Lambda Function Handler"
 }
 
+variable "lambda_env_variables" {
+  description = "Lambda Environment Variables"
+  type = "map"
+}
+
 ####################
 # API Gateway
 ####################

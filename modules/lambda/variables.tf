@@ -26,13 +26,9 @@ variable "role" {
   description = "IAM role attached to the Lambda Function (ARN)"
 }
 
-variable "database_uri" {
-  description = "Application database_uri"
-}
-
-variable "app_config" {
-  description = "Application config url"
-  default     = "../config/env.py"
+variable "env_variables" {
+  description = "Lambda funtion environment variables"
+  type = "map"
 }
 
 variable "subnet_ids" {
