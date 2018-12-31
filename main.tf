@@ -148,6 +148,26 @@ resource "aws_iam_role_policy" "vpc" {
 EOF
 }
 
+resource "aws_iam_role_policy" "lambda_invoke" {
+  name = "${aws_iam_role.lambda_role.name}-lambda-invoke"
+  role = "${aws_iam_role.lambda_role.id}"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lambda:InvokeFunction"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
+
 resource "aws_iam_role_policy" "logs" {
   name = "${aws_iam_role.lambda_role.name}-logs"
   role = "${aws_iam_role.lambda_role.id}"
